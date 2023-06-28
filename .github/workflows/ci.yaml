@@ -16,6 +16,7 @@ jobs:
       # zainstaluj wymagane biblioteki
       - name: Install deps
         run: pip3 install -r requirements.txt
+             pip3 install -r test_requirements.txt
       # dla kazdej zmiany, uruchom testy
       - name: Run tests
         run: PYTHONPATH=. py.test --verbose -s
