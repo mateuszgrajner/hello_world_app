@@ -12,3 +12,12 @@ ADD main.py $APP_DIR
 
 WORKDIR $APP_DIR
 CMD FLASK_APP=hello_world flask run --host=0.0.0.0
+
+docker_build:
+	docker build -t hello-world-printer .
+
+ docker_run: docker_build
+	docker run \
+		--name hello-world-printer-dev \
+		-p 5000:5000 \
+		-d hello-world-printer
